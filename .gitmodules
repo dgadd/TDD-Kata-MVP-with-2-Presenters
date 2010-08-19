@@ -1,0 +1,3 @@
+[submodule "3rdPartyLibraries"]
+	path = 3rdPartyLibraries
+	url = ../../Repositories/3rdPartyLibraries.git/
