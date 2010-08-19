@@ -6,12 +6,12 @@ namespace App.Support.Presenter
 {
     public class GatherMemberInfoPresenter
     {
-        private readonly ITempDataGateway _tempDataGateway;
+        private readonly ITempDataRepository _tempDataRepository;
         private readonly IGatherMemberInfoView _gatherMemberInfoView;
 
-        public GatherMemberInfoPresenter(ITempDataGateway tempDataGateway, IGatherMemberInfoView gatherMemberInfoView)
+        public GatherMemberInfoPresenter(ITempDataRepository tempDataRepository, IGatherMemberInfoView gatherMemberInfoView)
         {
-            _tempDataGateway = tempDataGateway;
+            _tempDataRepository = tempDataRepository;
             _gatherMemberInfoView = gatherMemberInfoView;
 
             _gatherMemberInfoView.GatherMemberInfo += new EventHandler(_gatherMemberInfoView_GatherMemberInfo);
@@ -20,7 +20,7 @@ namespace App.Support.Presenter
         void _gatherMemberInfoView_GatherMemberInfo(object sender, EventArgs e)
         {
             var gmiea = (GatherMemberInfoEventArgs) e;
-            var isSuccessful = _tempDataGateway.StoreMemberValues(gmiea.Member);
+            var isSuccessful = _tempDataRepository.StoreMemberValues(gmiea.Member);
             _gatherMemberInfoView.GoToNextView();
         }
     }
