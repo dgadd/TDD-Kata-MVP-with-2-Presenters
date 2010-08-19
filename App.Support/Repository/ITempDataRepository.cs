@@ -2,8 +2,9 @@
 
 namespace App.Support.Repository
 {
-    public interface ITempDataGateway
+    public interface ITempDataRepository
     {
         bool StoreMemberValues(Member member);
+        Member GetMemberValues();
     }
 }

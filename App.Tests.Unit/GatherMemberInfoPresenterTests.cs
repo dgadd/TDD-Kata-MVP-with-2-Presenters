@@ -14,14 +14,14 @@ namespace App.Tests.Unit
     public class GatherMemberInfoPresenterTests
     {
         private MockRepository _mockRepository;
-        private ITempDataGateway _tempDataGateway;
+        private ITempDataRepository _tempDataRepository;
         private IGatherMemberInfoView _gatherMemberInfoView;
 
         [SetUp]
         public void SetUp()
         {
             _mockRepository = new MockRepository();
-            _tempDataGateway = _mockRepository.StrictMock<ITempDataGateway>();
+            _tempDataRepository = _mockRepository.StrictMock<ITempDataRepository>();
             _gatherMemberInfoView = _mockRepository.StrictMock<IGatherMemberInfoView>();
         }
 
@@ -36,15 +36,13 @@ namespace App.Tests.Unit
             const string lastName = "Wong";
             const string gymMembershipId = "AB1234";
             var member = new Member { FirstName = firstName, LastName = lastName, GymMembershipId = gymMembershipId };
-            Expect.Call(_tempDataGateway.StoreMemberValues(member)).Return(true);
+            Expect.Call(_tempDataRepository.StoreMemberValues(member)).Return(true);
             _gatherMemberInfoView.GoToNextView();
-
-
 
             // put the mock into replay (instantiate the presenter)
             _mockRepository.ReplayAll();
 
-            var sut = new GatherMemberInfoPresenter(_tempDataGateway, _gatherMemberInfoView);
+            var sut = new GatherMemberInfoPresenter(_tempDataRepository, _gatherMemberInfoView);
             gatherMemberInfoEvent.Raise(_gatherMemberInfoView, new GatherMemberInfoEventArgs { Member = member });
 
             // verify the mock
