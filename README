@@ -1,0 +1,13 @@
+August 21, 2010
+TDD Kata for MVP with 2 Presenters
+http://www.gaddblog.com
+
+This source code demonstrates refactoring a brownfield development site 
+with 2 pages and calls to multiple depdendencies to a Model-View-Presenter
+design using 2 presenters.
+
+A related slide presentation describing this MVP conversion can be found here:
+
+http://wwww.gaddzeit.com/TDDKata_MVP_2Presenters.pdf
+
+
