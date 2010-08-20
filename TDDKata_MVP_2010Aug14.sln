@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Tests.Unit", "App.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Tests.Integration", "App.Tests.Integration\App.Tests.Integration.csproj", "{1FA2EF75-E6BA-4F6D-866F-41C9B4032134}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web_MVP", "Web_MVP\Web_MVP.csproj", "{418DF03A-12C1-4E88-94DB-0A7A2365775B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{1FA2EF75-E6BA-4F6D-866F-41C9B4032134}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FA2EF75-E6BA-4F6D-866F-41C9B4032134}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FA2EF75-E6BA-4F6D-866F-41C9B4032134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{418DF03A-12C1-4E88-94DB-0A7A2365775B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{418DF03A-12C1-4E88-94DB-0A7A2365775B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{418DF03A-12C1-4E88-94DB-0A7A2365775B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{418DF03A-12C1-4E88-94DB-0A7A2365775B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

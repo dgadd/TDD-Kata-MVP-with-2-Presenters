@@ -1,4 +1,5 @@
 ﻿using System;
+using App.Support.Domain;
 
 namespace App.Support.View
 {
@@ -6,5 +7,7 @@ namespace App.Support.View
     {
         event EventHandler RenewMembership;
         string Message { get; set; }
+        Member Member { get; set; }
+        event EventHandler Initialize;
     }
 }

@@ -4,12 +4,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4A7720E0-5834-4913-A22F-2F6A1C4F3E0C}</ProjectGuid>
+    <ProjectGuid>{418DF03A-12C1-4E88-94DB-0A7A2365775B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApplication1</RootNamespace>
-    <AssemblyName>WebApplication1</AssemblyName>
+    <RootNamespace>Web_MVP</RootNamespace>
+    <AssemblyName>Web_MVP</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
-    <Content Include="ProcessGymMembership.aspx" />
+    <Content Include="ProcessingGymMembership.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -65,14 +65,20 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProcessGymMembership.aspx.cs">
-      <DependentUpon>ProcessGymMembership.aspx</DependentUpon>
+    <Compile Include="ProcessingGymMembership.aspx.cs">
+      <DependentUpon>ProcessingGymMembership.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProcessGymMembership.aspx.designer.cs">
-      <DependentUpon>ProcessGymMembership.aspx</DependentUpon>
+    <Compile Include="ProcessingGymMembership.aspx.designer.cs">
+      <DependentUpon>ProcessingGymMembership.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Support\App.Support.csproj">
+      <Project>{920248E7-97F3-41A7-ABEC-1046604F8697}</Project>
+      <Name>App.Support</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -92,7 +98,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54356</DevelopmentServerPort>
+          <DevelopmentServerPort>56583</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

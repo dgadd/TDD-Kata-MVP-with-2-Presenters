@@ -33,9 +33,37 @@ namespace App.Tests.Unit
         }
 
         [Test]
+        public void InitializeEvent_NoInput_RepopulatesViewFromTempRepository()
+        {
+            // define out expectations (of how the Presenter will coordinate the interfaces
+            _renewMembershipView.Initialize += null;
+            var initializeEvent = LastCall.IgnoreArguments().GetEventRaiser();
+            _renewMembershipView.RenewMembership += null;
+            LastCall.IgnoreArguments();
+
+            const string firstName = "Sally";
+            const string lastName = "Wong";
+            const string gymMembershipId = "AB1234";
+            var member = new Member { FirstName = firstName, LastName = lastName, GymMembershipId = gymMembershipId };
+            Expect.Call(_tempDataRepository.GetMemberValues()).Return(member);
+
+            _renewMembershipView.Member = member;
+
+            _mockRepository.ReplayAll();
+
+            var sut = new RenewMembershipPresenter(_tempDataRepository, _nationalFitnessGateway,
+                                                   _ccProcessingGateway, _memberRepository, _renewMembershipView);
+            initializeEvent.Raise(_renewMembershipView, EventArgs.Empty);
+
+            _mockRepository.VerifyAll();            
+        }
+
+        [Test]
         public void RenewMembershipEvent_MemberInput_InstructsToGoToNextView()
         {
             // define out expectations (of how the Presenter will coordinate the interfaces
+            _renewMembershipView.Initialize += null;
+            LastCall.IgnoreArguments();
             _renewMembershipView.RenewMembership += null;
             var renewMembershipEvent = LastCall.IgnoreArguments().GetEventRaiser();
 
@@ -53,11 +81,7 @@ namespace App.Tests.Unit
 
             _memberRepository.SaveMember(member);
 
-            _renewMembershipView.Message = string.Format("Are dues paid for member {0} {1}, membership: {2}: {3}",
-                                                         member.FirstName,
-                                                         member.LastName,
-                                                         member.GymMembershipId,
-                                                         isPaid);
+            _renewMembershipView.Message = ApplicationConstants.FormatApprovalMessageForMember(member, isPaid);
             _mockRepository.ReplayAll();
 
             var sut = new RenewMembershipPresenter(_tempDataRepository, _nationalFitnessGateway,
