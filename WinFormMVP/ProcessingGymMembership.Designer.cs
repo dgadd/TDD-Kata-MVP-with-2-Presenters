@@ -55,6 +55,7 @@
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
+            this.lblMessage.ForeColor = System.Drawing.Color.Red;
             this.lblMessage.Location = new System.Drawing.Point(13, 116);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(0, 13);
@@ -64,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(384, 163);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnProceed);
             this.Controls.Add(this.lblMemberDetails);

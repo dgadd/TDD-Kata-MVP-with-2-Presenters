@@ -102,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(282, 141);
             this.Controls.Add(this.btnRenewGymMembership);
             this.Controls.Add(this.txtGymMembershipId);
             this.Controls.Add(this.label3);
