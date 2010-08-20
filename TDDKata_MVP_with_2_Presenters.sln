@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegacyWebApp", "WebApplication1\LegacyWebApp.csproj", "{4A7720E0-5834-4913-A22F-2F6A1C4F3E0C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegacyWebApp", "LegacyWebApp\LegacyWebApp.csproj", "{4A7720E0-5834-4913-A22F-2F6A1C4F3E0C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Support", "App.Support\App.Support.csproj", "{920248E7-97F3-41A7-ABEC-1046604F8697}"
 EndProject
