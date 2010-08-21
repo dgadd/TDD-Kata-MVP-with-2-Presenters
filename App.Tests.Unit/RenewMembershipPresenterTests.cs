@@ -47,6 +47,8 @@ namespace App.Tests.Unit
             var member = new Member { FirstName = firstName, LastName = lastName, GymMembershipId = gymMembershipId };
             Expect.Call(_tempDataRepository.GetMemberValues()).Return(member);
 
+            // the retrieved member information from the _tempDataRepository 
+            // is now assigned to the view (where it's properties can be assigned to various controls)
             _renewMembershipView.Member = member;
 
             _mockRepository.ReplayAll();
